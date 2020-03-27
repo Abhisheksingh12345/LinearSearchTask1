@@ -7,6 +7,7 @@
 
 package linearsearch;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -14,6 +15,7 @@ import java.util.Scanner;
  * This class will be used to demonstrate linear search.
  */
 public class Main {
+
     public static void main(String[] args) {
         System.out.println("How many elements do you want in the array?");
         final Scanner scanner = new Scanner(System.in);
@@ -41,10 +43,18 @@ public class Main {
      * @param number the number to search for.
      * @throws NumberNotFoundInArrayException throws this exception if the number is not present in the array.
      */
-    private static int findNumberInIntegerArray(int[] array, int number) throws NumberNotFoundInArrayException {
-        int response = -1;
-        return response;
+    private static String findNumberInIntegerArray(int[] array, int number) throws NumberNotFoundInArrayException {
+        ArrayList<Integer> foundPosition = new ArrayList<>();
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == number) {
+                foundPosition.add(i);
+            }
+        }
+        return (foundPosition.size() > 1)? "your no is found at " + foundPosition +" places" : "your no is found at " + foundPosition;
+
+       // return (countCloneNo >1) ? elementFound( foundPosition , number , countCloneNo ) : " Provided number is not found " ;
     }
+
 }
 
 class NumberNotFoundInArrayException extends Exception {
