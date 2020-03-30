@@ -50,9 +50,8 @@ public class Main {
                 foundPosition.add(i);
             }
         }
-        return (foundPosition.size() > 1)? "your no is found at " + foundPosition +" places" : "your no is found at " + foundPosition;
+        return (foundPosition.size() > 0)? "your number is found at " + foundPosition + ((foundPosition.size() > 1)? " places":" place"): "your number is not found";
 
-       // return (countCloneNo >1) ? elementFound( foundPosition , number , countCloneNo ) : " Provided number is not found " ;
     }
 
 }
